@@ -169,6 +169,12 @@
                                                                         </select>
                                                                     </div>
                                                                 </div>
+                                                                <div class="row meta-prealloc">
+                                                                    <label class="col-sm-3 col-form-label">{% trans "Shared" %}</label>
+                                                                    <div class="col-sm-7">
+                                                                        <input type="checkbox" name="shared" title="{% trans "Instance sharing" %}" value="false">
+                                                                    </div>
+                                                                </div>
                                                                  <div class="row">
                                                                     <label class="col-sm-4 col-form-label">{% trans "Advanced" %}</label>
                                                                     <div class="d-grid col-sm-7">
@@ -433,6 +439,12 @@
                             </select>
                         </div>
                     </div>
+                    <div class="row meta-prealloc">
+                            <label class="col-sm-3 col-form-label">{% trans "Shared" %}</label>
+                            <div class="col-sm-7">
+                                <input type="checkbox" name="shared" title="{% trans "Instance sharing" %}" value="false">
+                            </div>
+                    </div>
                     <div class="row">
                         <label class="col-sm-3 col-form-label">{% trans "Advanced" %}</label>
                         <div class="d-grid col-sm-7">
@@ -683,6 +695,12 @@
                             </div>
                             <div class="col-sm-4">
                                 <input type="text" class="form-control" name="mac" maxlength="17" value="{{ mac_auto }}" required pattern="[a-zA-Z0-9:]+">
+                            </div>
+                        </div>
+                        <div class="row meta-prealloc">
+                            <label class="col-sm-3 col-form-label">{% trans "Shared" %}</label>
+                            <div class="col-sm-7">
+                                <input type="checkbox" name="shared" title="{% trans "Instance sharing" %}" value="false">
                             </div>
                         </div>
                         <div class="row">

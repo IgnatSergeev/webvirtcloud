@@ -276,6 +276,7 @@ class CreateInstance(models.Model):
     listener_addr = models.CharField(
         max_length=20, choices=QEMU_CONSOLE_LISTENER_ADDRESSES
     )
+    shared = models.BooleanField(default=False)
 
     class Meta:
         managed = False

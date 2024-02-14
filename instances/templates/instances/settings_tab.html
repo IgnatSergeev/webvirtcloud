@@ -729,7 +729,7 @@
         {% if perms.instances.clone_instances or instance.shared %}
         <div role="tabpanel" class="tab-pane tab-pane-bordered" id="clone">
             <p class="fw-bold">{% trans "Create a clone" %}</p>
-            <form class="form" action="{% url 'instances:clone' instance.id %}" method="post" role="form" aria-label="Create clone form">{% csrf_token %}
+            <form class="form" action="{% url 'instances:permissionless_clone' instance.id %}" method="post" role="form" aria-label="Create clone form">{% csrf_token %}
                 <div class="row">
                     <label class="col-sm-3 col-form-label fw-normal">{% trans "Clone Name" %}</label>
                     {% if request.user.is_superuser %}

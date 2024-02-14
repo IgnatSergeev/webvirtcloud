@@ -61,7 +61,7 @@ class UserAttributes(models.Model):
     )
     max_disk_size = models.IntegerField(
         _("max disk size"),
-        default=40,
+        default=120,
         help_text=_("-1 for unlimited. Any integer value"),
         validators=[MinValueValidator(-1)],
     )

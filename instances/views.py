@@ -1387,14 +1387,7 @@ def del_owner(request, pk):
     return redirect(request.META.get("HTTP_REFERER") + "#users")
 
 
-@permission_required("instances.clone_instances", raise_exception=True)
 def clone(request, pk):
-    clone_impl(requedt, pk)
-
-def permissionless_clone(request, pk):
-    clone_impl(requedt, pk)
-
-def clone_impl(request, pk):
     instance = get_instance(request.user, pk)
 
     clone_data = dict()

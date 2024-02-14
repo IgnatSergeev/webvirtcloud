@@ -732,7 +732,6 @@
             <form class="form" action="{% url 'instances:clone' instance.id %}" method="post" role="form" aria-label="Create clone form">{% csrf_token %}
                 <div class="row">
                     <label class="col-sm-3 col-form-label fw-normal">{% trans "Clone Name" %}</label>
-                    {% if request.user.is_superuser %}
                     <div class="col-sm-6">
                         <div class="input-group">
                             <input id="clone_name" type="text" class="form-control" name="name" value="{{ instance.name }}-clone">
@@ -740,19 +739,6 @@
                                         onclick="guess_clone_name()">{% trans "Guess" %}</button>
                         </div>
                     </div>
-                    {% elif app_settings.CLONE_INSTANCE_AUTO_NAME == 'True'%}
-                    <div class="col-sm-4">
-                        <input id="clone_instance_auto_name" type="text" class="form-control" name="auto_name" value="Automatic" disabled/>
-                    </div>
-                    {% else %}
-                    <div class="col-sm-4">
-                        <select id="select_clone_name" class="form-control" name="name" size="1">
-                        {% for name in clone_free_names %}
-                            <option value="{{ name }}">{{ name }}</option>
-                        {% endfor %}
-                        </select>
-                    </div>
-                    {% endif %}
                 </div>
                 {% if request.user.is_superuser %}
                     <label>{% trans "Network devices" %}:</label>

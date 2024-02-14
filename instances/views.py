@@ -1543,6 +1543,7 @@ def change_options(request, pk):
 
     if request.user.is_superuser or request.user.is_staff or userinstance.is_change:
         instance.is_template = request.POST.get("is_template", False)
+        instance.shared = request.POST.get("shared", False)
         instance.save()
 
         options = {}

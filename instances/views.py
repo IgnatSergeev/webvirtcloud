@@ -54,9 +54,12 @@ def index(request):
     if request.user.is_superuser or request.user.has_perm("instances.view_instances"):
         instances = Instance.objects.all().prefetch_related("userinstance_set")
     else:
-        instances = Instance.objects.filter(
+        instances =  Instance.objects.filter(
             userinstance__user=request.user
-        ).prefetch_related("userinstance_set")
+        ) |  Instance.objects.filter(
+            shared=True
+        )
+        instances = instances.prefetch_related("userinstance_set")
 
     return render(
         request, "allinstances.html", {"computes": computes, "instances": instances}

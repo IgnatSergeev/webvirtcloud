@@ -848,6 +848,17 @@
                     </div>
                 </div>
                 <div class="row">
+                    <label class="col-sm-3 col-form-label">{% trans "Shared" %}</label>
+                    <div class="col-sm-6">
+                        <input type="checkbox"
+                            name="shared"
+                            value="True"
+                            id="shared"
+                            {% if instance.shared %}checked{% endif %}
+                            {% if not request.user.is_superuser and not request.user.is_staff %}disabled{% endif %}>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="d-grid offset-3 col-sm-6">
                     {% if instance.status == 5 %}
                         <button type="submit" class="btn btn-success" name="change_options">{% trans "Change" %}</button>

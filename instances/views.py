@@ -327,6 +327,7 @@ def get_instance(user, pk):
         user.is_superuser
         or user.has_perm("instances.view_instances")
         or instance.id in user_instances
+        or instance.shared
     ):
         return instance
     else:

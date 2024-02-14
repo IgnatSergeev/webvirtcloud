@@ -29,7 +29,8 @@ class Instance(models.Model):
     is_template = models.BooleanField(_("is template"), default=False)
     created = models.DateTimeField(_("created"), auto_now_add=True)
     drbd = models.CharField(_("drbd"), max_length=24, default="None")
-
+    shared = models.BooleanField(_("shared"), default=False)
+    
     objects = InstanceManager()
 
     def __str__(self):

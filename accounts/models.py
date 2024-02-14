@@ -43,25 +43,25 @@ class UserAttributes(models.Model):
     can_clone_instances = models.BooleanField(default=True)
     max_instances = models.IntegerField(
         _("max instances"),
-        default=2,
+        default=3,
         help_text=_("-1 for unlimited. Any integer value"),
         validators=[MinValueValidator(-1)],
     )
     max_cpus = models.IntegerField(
         _("max CPUs"),
-        default=2,
+        default=4,
         help_text=_("-1 for unlimited. Any integer value"),
         validators=[MinValueValidator(-1)],
     )
     max_memory = models.IntegerField(
         _("max memory"),
-        default=2048,
+        default=4096,
         help_text=_("-1 for unlimited. Any integer value"),
         validators=[MinValueValidator(-1)],
     )
     max_disk_size = models.IntegerField(
         _("max disk size"),
-        default=20,
+        default=40,
         help_text=_("-1 for unlimited. Any integer value"),
         validators=[MinValueValidator(-1)],
     )

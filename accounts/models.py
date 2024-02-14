@@ -49,13 +49,13 @@ class UserAttributes(models.Model):
     )
     max_cpus = models.IntegerField(
         _("max CPUs"),
-        default=4,
+        default=9,
         help_text=_("-1 for unlimited. Any integer value"),
         validators=[MinValueValidator(-1)],
     )
     max_memory = models.IntegerField(
         _("max memory"),
-        default=4096,
+        default=12288,
         help_text=_("-1 for unlimited. Any integer value"),
         validators=[MinValueValidator(-1)],
     )

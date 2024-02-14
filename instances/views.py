@@ -1882,7 +1882,7 @@ def create_instance(request, compute_id, arch, machine):
                                 add_input=data["add_input"],
                             )
                             create_instance = Instance(
-                                compute_id=compute_id, name=data["name"], uuid=uuid
+                                compute_id=compute_id, name=data["name"], uuid=uuid, shared=data["shared"]
                             )
                             create_instance.save()
                             msg = _("Instance is created")

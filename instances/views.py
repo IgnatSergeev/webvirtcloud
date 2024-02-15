@@ -1355,7 +1355,6 @@ def unset_qos(request, pk):
     return redirect(request.META.get("HTTP_REFERER") + "#network")
 
 
-@superuser_only
 def add_owner(request, pk):
     instance = get_instance(request.user, pk)
     user_id = request.POST.get("user_id")

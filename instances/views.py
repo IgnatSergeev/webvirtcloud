@@ -151,7 +151,7 @@ def instance(request, pk):
         instance.drbd = drbd_status(request, pk)
         instance.save()
 
-    user_owns_instance = instances =  instance in Instance.objects.filter(userinstance__user=request.user)
+    user_owns_instance = instance in Instance.objects.filter(userinstance__user=request.user)
   
     return render(request, "instance.html", locals(),)
 

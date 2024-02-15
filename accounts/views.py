@@ -85,7 +85,6 @@ def ssh_key_delete(request, pk):
     )
 
 
-@superuser_only
 def account(request, user_id):
     user = User.objects.get(id=user_id)
     user_insts = UserInstance.objects.filter(user_id=user_id)
@@ -155,7 +154,6 @@ def user_instance_update(request, pk):
     )
 
 
-@superuser_only
 def user_instance_delete(request, pk):
     user_instance = get_object_or_404(UserInstance, pk=pk)
     if request.method == "POST":

@@ -30,7 +30,7 @@
                 </button>
             </li>
         {% endif %}
-        {% if request.user.is_superuser or instance.id in Instance.objects.filter(userinstance__user=request.user) %}
+        {% if request.user.is_superuser %}
             <li class="nav-item" role="presentation">
                 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#network" type="button" role="tab" aria-controls="network" aria-selected="false">
                     {% trans "Network" %}
@@ -63,7 +63,7 @@
                 </button>
             </li>
         {% endif %}
-        {% if request.user.is_superuser %}
+        {% if request.user.is_superuser or instance.id in instances %}
             <li class="nav-item" role="presentation">
                 <button class="px-1 nav-link" data-bs-toggle="tab" data-bs-target="#users" type="button" role="tab" aria-controls="users" aria-selected="false">
                     {% trans "Users" %}

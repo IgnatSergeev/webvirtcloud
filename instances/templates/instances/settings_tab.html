@@ -63,7 +63,7 @@
                 </button>
             </li>
         {% endif %}
-        {% if request.user.is_superuser %}
+        {% if request.user.is_superuser or user_owns_instance %}
             <li class="nav-item" role="presentation">
                 <button class="px-1 nav-link" data-bs-toggle="tab" data-bs-target="#users" type="button" role="tab" aria-controls="users" aria-selected="false">
                     {% trans "Users" %}
@@ -679,6 +679,8 @@
             </form>
             <div class="clearfix"></div>
         </div>
+        {% endif %}
+        {% if request.user.is_superuser or user_owns_instance %}
         <div role="tabpanel" class="tab-pane tab-pane-bordered" id="users">
             <div>
             <p class="fw-bold">

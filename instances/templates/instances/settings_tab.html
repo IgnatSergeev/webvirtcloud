@@ -693,7 +693,11 @@
                     <tbody class="searchable">
                     {% for userinstance in userinstances %}
                         <tr>
+                            {% if request.user.is_superuser %}
                             <td><a href="{% url 'accounts:account' userinstance.user.id %}">{{ userinstance.user }}</a></td>
+                            {% else %}
+                            <td>{{ userinstance.user }}</td>
+                            {% endif %}
                             <td style="width:30px;">
                                 <a href="{% url 'accounts:user_instance_delete' userinstance.id %}?next={% url 'instances:instance' instance.id %}#users">
                                     {% bs_icon 'trash' %}

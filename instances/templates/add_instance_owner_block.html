@@ -1,6 +1,6 @@
 {% load i18n %}
 {% load bootstrap_icons %}
-{% if request.user.is_superuser or user_owns_instance %}
+{% if request.user.is_superuser %}
     <a href="#addInstanceOwner" type="button" class="btn btn-success float-end" data-bs-toggle="modal">
         <span aria-hidden="true">{% bs_icon 'plus'%} </span>
     </a>

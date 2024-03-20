@@ -789,8 +789,16 @@
                         </div>
                     {% endfor %}
                 {% else %}
+                    <label>{% trans "Storage devices(suggested to use clone name)" %}:</label>
                     {% for disk in instance.disks %}
-                        <input id="disk_name-{{ disk.dev }}" type="text" class="form-control" name="disk-{{ disk.dev }}" value="{{ disk.image }}"/>
+                        <div class="row">
+                            <label class="col-sm-2 col-form-label offset-1">{{ disk.dev }} ({{ disk.storage }})</label>
+                            <div class="col-sm-6">
+                            <div class="input-group mb-3">
+                                    <input id="disk_name-{{ disk.dev }}" type="text" class="form-control" name="disk-{{ disk.dev }}" value="{{ disk.image }}"/>
+                                </div>
+                            </div>
+                        </div>
                     {% endfor %}
                 {% endif %}
                 <div class="row mb-3">

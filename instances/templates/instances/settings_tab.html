@@ -790,7 +790,7 @@
                     {% endfor %}
                 {% else %}
                     {% for disk in instance.disks %}
-                        <input id="disk_name-{{ disk.dev }}" type="hidden" class="form-control" name="disk-{{ disk.dev }}" value="{{ disk.image }}"/>
+                        <input id="disk_name-{{ disk.dev }}" type="text" class="form-control" name="disk-{{ disk.dev }}" value="{{ disk.image }}"/>
                     {% endfor %}
                 {% endif %}
                 <div class="row mb-3">
